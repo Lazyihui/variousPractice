@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Main : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] RoleEntity boss;
+
+    [SerializeField] RoleEntity enmey;
+
     void Awake()
     {
-        Debug.Log("Hello World");
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        float dt = Time.deltaTime;
+        RoleDamain.Move(enmey, boss.transform.position, dt);
     }
 }
